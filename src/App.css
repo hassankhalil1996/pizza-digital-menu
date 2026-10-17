@@ -1,4 +1,6 @@
 
+/* GENERAL */
+
 .app {
   max-width: 1200px;
   margin: auto;
@@ -9,36 +11,23 @@
 /* HEADER */
 
 .header {
-  text-align: center;
-  padding: 28px 12px 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 4px;
 }
 
-.logo-symbol {
-  font-size: 48px;
-}
-
-.logo-small {
-  font-weight: 800;
-  letter-spacing: 7px;
-}
-
-.header h1 {
-  color: #b71920;
-  font-family: Georgia, serif;
-  font-size: clamp(48px, 8vw, 80px);
-  letter-spacing: 3px;
-  margin: 0;
+.restaurant-logo {
+  display: block;
+  width: 140px;
+  height: auto;
+  object-fit: contain;
 }
 
 .header p {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
-}
-
-.header span {
-  color: #7c7772;
-  font-size: 12px;
-  letter-spacing: 2px;
+  margin: 8px 0 0;
 }
 
 /* NAVIGATION */
@@ -77,6 +66,7 @@
 
 .section {
   margin: 24px 0 36px;
+  scroll-margin-top: 90px;
 }
 
 .section h2 {
@@ -96,15 +86,17 @@
 
 .toppings-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 14px;
 }
 
 .topping-card {
   text-align: center;
+  min-width: 0;
 }
 
 .topping-card img {
+  display: block;
   width: 80px;
   height: 80px;
   margin: auto;
@@ -166,6 +158,7 @@
 }
 
 .pizza-image {
+  display: block;
   width: 100%;
   height: 155px;
   object-fit: cover;
@@ -225,7 +218,7 @@
 
 .drinks-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -235,9 +228,11 @@
   border-radius: 16px;
   text-align: center;
   padding: 12px;
+  min-width: 0;
 }
 
 .drink-card img {
+  display: block;
   height: 110px;
   width: 100%;
   object-fit: contain;
@@ -271,24 +266,35 @@
   }
 
   .toppings-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 /* MOBILE */
 
 @media (max-width: 600px) {
+  /* GENERAL */
+
   .app {
     padding: 0 12px;
   }
 
+  /* HEADER */
+
   .header {
-    padding: 20px 8px 16px;
+    padding: 8px 0 4px;
   }
 
-  .header h1 {
-    font-size: 48px;
+  .restaurant-logo {
+    width: 110px;
   }
+
+  .header p {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+
+  /* NAVIGATION */
 
   .navbar {
     gap: 8px;
@@ -299,18 +305,24 @@
     padding: 12px 6px;
   }
 
+  /* SECTIONS */
+
   .section {
     margin: 20px 0 28px;
   }
 
-  /* Compact pizza layout */
+  /* COMPACT PIZZA CARDS */
 
   .pizza-list {
     gap: 12px;
   }
 
   .pizza-card {
+    display: grid;
     grid-template-columns: 105px minmax(0, 1fr);
+    grid-template-areas:
+      "image info"
+      "prices prices";
     gap: 10px;
     padding: 10px;
     align-items: start;
@@ -318,10 +330,16 @@
   }
 
   .pizza-image {
+    grid-area: image;
     width: 105px;
     height: 105px;
     object-fit: cover;
     border-radius: 10px;
+  }
+
+  .pizza-info {
+    grid-area: info;
+    min-width: 0;
   }
 
   .pizza-info h3 {
@@ -340,8 +358,13 @@
     margin: 3px 0;
   }
 
+  /* PIZZA PRICES */
+
   .pizza-prices {
-    grid-column: 1 / -1;
+    grid-area: prices;
+    grid-column: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
   }
 
@@ -359,14 +382,14 @@
     font-size: 18px;
   }
 
-  /* Toppings */
+  /* COMPACT TOPPINGS */
 
   .toppings-section {
     padding: 10px;
+    border-radius: 14px;
   }
 
   .toppings-grid {
-    display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px 5px;
   }
@@ -374,7 +397,6 @@
   .topping-card img {
     width: 48px;
     height: 48px;
-    object-fit: cover;
   }
 
   .topping-card h3 {
@@ -392,10 +414,10 @@
     padding: 4px 6px;
   }
 
-  /* Drinks */
+  /* DRINKS */
 
   .drinks-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
