@@ -17,7 +17,7 @@ function App() {
         
 
         <section id="pizza" className="section">
-          <h2>הפיצות שלנו | البيتزا عنا</h2>
+          <h2>הפיצות שלנו | البيتزا لدينا</h2>
 
           <div className="pizza-list">
             {pizzas.map((pizza) => (
@@ -27,7 +27,7 @@ function App() {
         </section>
 
         <Toppings />
-        
+
         <Drinks />
       </main>
 
