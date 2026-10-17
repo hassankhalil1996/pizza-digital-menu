@@ -26,10 +26,31 @@
 
 .restaurant-logo {
   display: block;
-  width: 140px;
-  max-width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
+
   object-fit: contain;
+
+  background: #fff8ee;
+  border: 3px solid #d9a441;
+  border-radius: 50%;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.12),
+    0 0 0 5px rgba(217, 164, 65, 0.1);
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.restaurant-logo:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18),
+    0 0 0 7px rgba(217, 164, 65, 0.15);
 }
 
 /* ========================================
@@ -349,7 +370,8 @@
   }
 
   .restaurant-logo {
-    width: 110px;
+    width: 125px;
+    height: 125px;
   }
 
   /* NAVIGATION */
