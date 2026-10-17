@@ -101,6 +101,18 @@
   min-width: 0;
 }
 
+.header p {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 800;
+  color: #b71920;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin: 10px 0;
+  padding: 8px 16px;
+  border-bottom: 3px solid #d9a441;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
 /* Image and description together */
 
 .pizza-main {
