@@ -277,7 +277,6 @@
 
 /* MOBILE */
 
-
 @media (max-width: 600px) {
   .app {
     padding: 0 12px;
@@ -304,18 +303,14 @@
     margin: 20px 0 28px;
   }
 
-  /* PIZZA */
+  /* Compact pizza layout */
 
   .pizza-list {
     gap: 12px;
   }
 
   .pizza-card {
-    display: grid;
     grid-template-columns: 105px minmax(0, 1fr);
-    grid-template-areas:
-      "image info"
-      "prices prices";
     gap: 10px;
     padding: 10px;
     align-items: start;
@@ -323,16 +318,10 @@
   }
 
   .pizza-image {
-    grid-area: image;
     width: 105px;
     height: 105px;
     object-fit: cover;
     border-radius: 10px;
-  }
-
-  .pizza-info {
-    grid-area: info;
-    min-width: 0;
   }
 
   .pizza-info h3 {
@@ -352,10 +341,7 @@
   }
 
   .pizza-prices {
-    grid-area: prices;
-    grid-column: auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column: 1 / -1;
     gap: 6px;
   }
 
@@ -373,7 +359,7 @@
     font-size: 18px;
   }
 
-  /* TOPPINGS */
+  /* Toppings */
 
   .toppings-section {
     padding: 12px;
@@ -389,7 +375,7 @@
     height: 65px;
   }
 
-  /* DRINKS */
+  /* Drinks */
 
   .drinks-grid {
     grid-template-columns: repeat(2, 1fr);
