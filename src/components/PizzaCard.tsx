@@ -14,17 +14,19 @@ export default function PizzaCard({ pizza }: Props) {
 
   return (
     <article className="pizza-card">
-      <img
-        className="pizza-image"
-        src={pizza.image}
-        alt={pizza.name.he}
-      />
+      <div className="pizza-main">
+        <img
+          className="pizza-image"
+          src={pizza.image}
+          alt={pizza.name.he}
+        />
 
-      <div className="pizza-info">
-        <h3>{pizza.name.he}</h3>
-        <h4 lang="ar">{pizza.name.ar}</h4>
-        <p>{pizza.description.he}</p>
-        <p lang="ar">{pizza.description.ar}</p>
+        <div className="pizza-info">
+          <h3>{pizza.name.he}</h3>
+          <h4 lang="ar">{pizza.name.ar}</h4>
+          <p>{pizza.description.he}</p>
+          <p lang="ar">{pizza.description.ar}</p>
+        </div>
       </div>
 
       <div className="pizza-prices">

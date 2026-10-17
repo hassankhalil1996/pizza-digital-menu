@@ -1,5 +1,7 @@
 
-/* GENERAL */
+/* ========================================
+   GENERAL
+======================================== */
 
 .app {
   max-width: 1200px;
@@ -8,7 +10,9 @@
   direction: rtl;
 }
 
-/* HEADER */
+/* ========================================
+   HEADER
+======================================== */
 
 .header {
   display: flex;
@@ -20,17 +24,14 @@
 .restaurant-logo {
   display: block;
   width: 140px;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-.header p {
-  font-size: 15px;
-  font-weight: bold;
-  margin: 8px 0 0;
-}
-
-/* NAVIGATION */
+/* ========================================
+   NAVIGATION
+======================================== */
 
 .navbar {
   position: sticky;
@@ -62,7 +63,9 @@
   box-shadow: 0 4px 12px #b7192033;
 }
 
-/* SECTIONS */
+/* ========================================
+   SECTIONS
+======================================== */
 
 .section {
   margin: 24px 0 36px;
@@ -76,7 +79,108 @@
   font-size: clamp(21px, 3vw, 27px);
 }
 
-/* TOPPINGS */
+/* ========================================
+   PIZZA CARDS
+======================================== */
+
+.pizza-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pizza-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e9ddd0;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px #0000000a;
+  min-width: 0;
+}
+
+/* Image and description together */
+
+.pizza-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pizza-image {
+  display: block;
+  width: 190px;
+  height: 155px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.pizza-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pizza-info h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.pizza-info h4 {
+  margin: 0 0 9px;
+  font-size: 17px;
+}
+
+.pizza-info p {
+  color: #666;
+  line-height: 1.5;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* ========================================
+   PIZZA PRICES
+======================================== */
+
+.pizza-prices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 270px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.size-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px 4px;
+  background: #fff2e6;
+  border: 1px solid #e9c9b0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.size-box span {
+  font-size: 12px;
+}
+
+.size-box strong {
+  color: #b71920;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+/* ========================================
+   TOPPINGS
+======================================== */
 
 .toppings-section {
   background: white;
@@ -137,84 +241,9 @@
   font-weight: bold;
 }
 
-/* PIZZA CARDS */
-
-.pizza-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.pizza-card {
-  display: grid;
-  grid-template-columns: 190px minmax(0, 1fr) 270px;
-  gap: 16px;
-  align-items: center;
-  background: white;
-  border: 1px solid #e9ddd0;
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 3px 12px #0000000a;
-}
-
-.pizza-image {
-  display: block;
-  width: 100%;
-  height: 155px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.pizza-info {
-  min-width: 0;
-}
-
-.pizza-info h3 {
-  margin: 0 0 4px;
-  font-size: 20px;
-}
-
-.pizza-info h4 {
-  margin: 0 0 9px;
-  font-size: 17px;
-}
-
-.pizza-info p {
-  color: #666;
-  line-height: 1.5;
-  margin: 4px 0;
-  font-size: 14px;
-}
-
-/* PIZZA PRICES */
-
-.pizza-prices {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 7px;
-}
-
-.size-box {
-  background: #fff2e6;
-  border: 1px solid #e9c9b0;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.size-box span {
-  font-size: 12px;
-}
-
-.size-box strong {
-  color: #b71920;
-  font-size: 20px;
-}
-
-/* DRINKS */
+/* ========================================
+   DRINKS
+======================================== */
 
 .drinks-grid {
   display: grid;
@@ -246,7 +275,9 @@
   padding: 8px;
 }
 
-/* FOOTER */
+/* ========================================
+   FOOTER
+======================================== */
 
 .footer {
   text-align: center;
@@ -254,15 +285,29 @@
   padding: 25px 0 35px;
 }
 
-/* TABLETS */
+/* ========================================
+   TABLETS
+======================================== */
 
 @media (max-width: 900px) {
   .pizza-card {
-    grid-template-columns: 150px minmax(0, 1fr);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .pizza-main {
+    width: 100%;
+  }
+
+  .pizza-image {
+    width: 150px;
+    height: 130px;
   }
 
   .pizza-prices {
-    grid-column: 1 / -1;
+    width: 100%;
+    flex-shrink: 1;
   }
 
   .toppings-grid {
@@ -270,9 +315,12 @@
   }
 }
 
-/* MOBILE */
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 600px) {
+
   /* GENERAL */
 
   .app {
@@ -287,11 +335,6 @@
 
   .restaurant-logo {
     width: 110px;
-  }
-
-  .header p {
-    font-size: 13px;
-    margin-top: 6px;
   }
 
   /* NAVIGATION */
@@ -311,36 +354,42 @@
     margin: 20px 0 28px;
   }
 
-  /* COMPACT PIZZA CARDS */
-
-  /* PIZZA - MOBILE */
+  /* PIZZA CARDS */
 
   .pizza-list {
-    gap: 12px;
+    gap: 14px;
   }
 
   .pizza-card {
-    display: grid;
-    grid-template-columns: 105px minmax(0, 1fr);
-    grid-template-areas:
-      "image info"
-      "prices prices";
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
     padding: 10px;
-    align-items: start;
     border-radius: 14px;
   }
 
+  /* IMAGE + DESCRIPTION */
+
+  .pizza-main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+  }
+
   .pizza-image {
-    grid-area: image;
     width: 105px;
     height: 105px;
+    flex: 0 0 105px;
     object-fit: cover;
     border-radius: 10px;
   }
 
   .pizza-info {
-    grid-area: info;
+    flex: 1;
     min-width: 0;
   }
 
@@ -360,13 +409,15 @@
     margin: 3px 0;
   }
 
+  /* FULL-WIDTH PRICES */
+
   .pizza-prices {
-    grid-area: prices;
-    grid-column: auto;
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+    flex-shrink: 1;
   }
 
   .size-box {
@@ -377,11 +428,11 @@
   }
 
   .size-box span {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .size-box strong {
-    font-size: 20px;
+    font-size: 18px;
     white-space: nowrap;
   }
 
