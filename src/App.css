@@ -6,13 +6,15 @@
   direction: rtl;
 }
 
+/* HEADER */
+
 .header {
   text-align: center;
-  padding: 38px 12px 28px;
+  padding: 28px 12px 22px;
 }
 
 .logo-symbol {
-  font-size: 58px;
+  font-size: 48px;
 }
 
 .logo-small {
@@ -23,13 +25,13 @@
 .header h1 {
   color: #b71920;
   font-family: Georgia, serif;
-  font-size: clamp(52px, 9vw, 90px);
+  font-size: clamp(48px, 8vw, 80px);
   letter-spacing: 3px;
   margin: 0;
 }
 
 .header p {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -38,6 +40,8 @@
   font-size: 12px;
   letter-spacing: 2px;
 }
+
+/* NAVIGATION */
 
 .navbar {
   position: sticky;
@@ -53,35 +57,41 @@
   flex: 1;
   text-align: center;
   text-decoration: none;
-  background: #b71920;
-  color: white;
-  border-radius: 30px;
-  padding: 16px 10px;
-  font-weight: bold;
-  box-shadow: 0 3px 10px #00000015;
-}
-
-.navbar a:last-child {
   background: white;
   color: #b71920;
   border: 1px solid #e4d4c8;
+  border-radius: 30px;
+  padding: 14px 10px;
+  font-weight: bold;
+  transition: all 0.25s ease;
 }
 
+.navbar a.active {
+  background: #b71920;
+  color: white;
+  border-color: #b71920;
+  box-shadow: 0 4px 12px #b7192033;
+}
+
+/* SECTIONS */
+
 .section {
-  margin: 26px 0 42px;
+  margin: 24px 0 36px;
 }
 
 .section h2 {
   color: #a70e18;
   border-bottom: 2px solid #b71920;
-  padding-bottom: 12px;
-  font-size: clamp(21px, 3vw, 29px);
+  padding-bottom: 10px;
+  font-size: clamp(21px, 3vw, 27px);
 }
+
+/* TOPPINGS */
 
 .toppings-section {
   background: white;
-  padding: 20px;
-  border-radius: 22px;
+  padding: 18px;
+  border-radius: 18px;
 }
 
 .toppings-grid {
@@ -95,8 +105,8 @@
 }
 
 .topping-card img {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   margin: auto;
   border-radius: 50%;
   object-fit: cover;
@@ -105,180 +115,22 @@
 
 .topping-card h3,
 .drink-card h3 {
-  margin: 10px 0 3px;
-  font-size: 15px;
+  margin: 9px 0 3px;
+  font-size: 14px;
 }
 
 .topping-card p,
 .drink-card p {
-  margin: 0 0 9px;
-  font-size: 14px;
+  margin: 0 0 8px;
+  font-size: 13px;
 }
 
 .price-label {
   display: inline-block;
-  padding: 7px 12px;
+  padding: 6px 10px;
   background: #f1e8df;
   border-radius: 20px;
   font-size: 12px;
-}
-
-.pizza-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.pizza-card {
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr) 310px;
-  gap: 18px;
-  align-items: center;
-  background: white;
-  border: 1px solid #e9ddd0;
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: 0 3px 12px #0000000a;
-}
-
-.pizza-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.pizza-info h3 {
-  margin: 0 0 5px;
-  font-size: 22px;
-}
-
-.pizza-info h4 {
-  margin: 0 0 14px;
-  font-size: 18px;
-}
-
-.pizza-info p {
-  color: #666;
-  line-height: 1.6;
-  margin: 5px 0;
-}
-
-.pizza-prices {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.size-box {
-  background: #fff2e6;
-  border: 1px solid #e9c9b0;
-  border-radius: 12px;
-  text-align: center;
-  padding: 13px 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.size-box span {
-  font-size: 13px;
-}
-
-.size-box strong {
-  color: #b71920;
-  font-size: 23px;
-}
-
-.drinks-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-}
-
-.drink-card {
-  background: white;
-  border: 1px solid #e9ddd0;
-  border-radius: 16px;
-  text-align: center;
-  padding: 15px;
-}
-
-.drink-card img {
-  height: 130px;
-  width: 100%;
-  object-fit: contain;
-}
-
-.drink-card strong {
-  display: block;
-  background: #b71920;
-  color: white;
-  border-radius: 20px;
-  padding: 8px;
-}
-
-.footer {
-  text-align: center;
-  border-top: 2px solid #b71920;
-  padding: 25px 0 35px;
-}
-
-@media (max-width: 900px) {
-  .pizza-card {
-    grid-template-columns: 180px 1fr;
-  }
-
-  .pizza-prices {
-    grid-column: 1 / -1;
-  }
-
-  .toppings-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .app {
-    padding: 0 12px;
-  }
-
-  .navbar a {
-    font-size: 14px;
-  }
-
-  .pizza-card {
-    grid-template-columns: 1fr;
-  }
-
-  .pizza-image {
-    height: 220px;
-  }
-
-  .pizza-prices {
-    grid-column: auto;
-  }
-
-  .toppings-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px 8px;
-  }
-
-  .topping-card img {
-    width: 72px;
-    height: 72px;
-  }
-
-  .drinks-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .drink-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 220px;
-    width: 100%;
-    justify-self: center;
-  }
 }
 
 .price-label.free {
@@ -291,4 +143,253 @@
   background: #fde8e8;
   color: #b71920;
   font-weight: bold;
+}
+
+/* PIZZA CARDS */
+
+.pizza-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pizza-card {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 270px;
+  gap: 16px;
+  align-items: center;
+  background: white;
+  border: 1px solid #e9ddd0;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 3px 12px #0000000a;
+}
+
+.pizza-image {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.pizza-info {
+  min-width: 0;
+}
+
+.pizza-info h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.pizza-info h4 {
+  margin: 0 0 9px;
+  font-size: 17px;
+}
+
+.pizza-info p {
+  color: #666;
+  line-height: 1.5;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* PIZZA PRICES */
+
+.pizza-prices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.size-box {
+  background: #fff2e6;
+  border: 1px solid #e9c9b0;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.size-box span {
+  font-size: 12px;
+}
+
+.size-box strong {
+  color: #b71920;
+  font-size: 20px;
+}
+
+/* DRINKS */
+
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.drink-card {
+  background: white;
+  border: 1px solid #e9ddd0;
+  border-radius: 16px;
+  text-align: center;
+  padding: 12px;
+}
+
+.drink-card img {
+  height: 110px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.drink-card strong {
+  display: block;
+  background: #b71920;
+  color: white;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  border-top: 2px solid #b71920;
+  padding: 25px 0 35px;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .pizza-card {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .pizza-prices {
+    grid-column: 1 / -1;
+  }
+
+  .toppings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 0 12px;
+  }
+
+  .header {
+    padding: 20px 8px 16px;
+  }
+
+  .header h1 {
+    font-size: 48px;
+  }
+
+  .navbar {
+    gap: 8px;
+  }
+
+  .navbar a {
+    font-size: 13px;
+    padding: 12px 6px;
+  }
+
+  .section {
+    margin: 20px 0 28px;
+  }
+
+  /* Compact pizza layout */
+
+  .pizza-list {
+    gap: 12px;
+  }
+
+  .pizza-card {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+    align-items: start;
+    border-radius: 14px;
+  }
+
+  .pizza-image {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .pizza-info h3 {
+    font-size: 16px;
+    margin: 0 0 3px;
+  }
+
+  .pizza-info h4 {
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+
+  .pizza-info p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 3px 0;
+  }
+
+  .pizza-prices {
+    grid-column: 1 / -1;
+    gap: 6px;
+  }
+
+  .size-box {
+    padding: 7px 3px;
+    gap: 3px;
+    border-radius: 8px;
+  }
+
+  .size-box span {
+    font-size: 11px;
+  }
+
+  .size-box strong {
+    font-size: 18px;
+  }
+
+  /* Toppings */
+
+  .toppings-section {
+    padding: 12px;
+  }
+
+  .toppings-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 8px;
+  }
+
+  .topping-card img {
+    width: 65px;
+    height: 65px;
+  }
+
+  /* Drinks */
+
+  .drinks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .drink-card img {
+    height: 90px;
+  }
+
+  .drink-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 220px;
+    width: 100%;
+    justify-self: center;
+  }
 }
