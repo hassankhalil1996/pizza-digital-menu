@@ -278,13 +278,7 @@
 /* MOBILE */
 
 
-
-
-
-
 @media (max-width: 600px) {
-  /* GENERAL */
-
   .app {
     padding: 0 12px;
   }
@@ -357,62 +351,42 @@
     margin: 3px 0;
   }
 
-  /* PIZZA PRICES - NORMAL SIZE */
-
   .pizza-prices {
     grid-area: prices;
     grid-column: auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
   }
 
   .size-box {
-    padding: 11px 5px;
-    gap: 5px;
-    border-radius: 10px;
+    padding: 7px 3px;
+    gap: 3px;
+    border-radius: 8px;
   }
 
   .size-box span {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .size-box strong {
-    font-size: 23px;
+    font-size: 18px;
   }
 
-  /* COMPACT TOPPINGS */
+  /* TOPPINGS */
 
   .toppings-section {
-    padding: 10px;
-    border-radius: 14px;
+    padding: 12px;
   }
 
   .toppings-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px 5px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 8px;
   }
 
   .topping-card img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-  }
-
-  .topping-card h3 {
-    font-size: 11px;
-    margin: 5px 0 2px;
-  }
-
-  .topping-card p {
-    font-size: 10px;
-    margin: 0 0 5px;
-  }
-
-  .topping-card .price-label {
-    font-size: 10px;
-    padding: 4px 6px;
+    width: 65px;
+    height: 65px;
   }
 
   /* DRINKS */
