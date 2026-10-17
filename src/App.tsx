@@ -1,12 +1,39 @@
 
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Toppings from "./components/Toppings";
+import PizzaCard from "./components/PizzaCard";
+import Drinks from "./components/Drinks";
+import { pizzas } from "./data/menu";
 import "./App.css";
 
 function App() {
   return (
-    <main>
-      <h1>Pizza Digital Menu</h1>
-      <p>Welcome to our restaurant!</p>
-    </main>
+    <div className="app">
+      <Header />
+      <Navbar />
+
+      <main>
+        <Toppings />
+
+        <section id="pizza" className="section">
+          <h2>הפיצות שלנו | البيتزا عنا</h2>
+
+          <div className="pizza-list">
+            {pizzas.map((pizza) => (
+              <PizzaCard key={pizza.id} pizza={pizza} />
+            ))}
+          </div>
+        </section>
+
+        <Drinks />
+      </main>
+
+      <footer className="footer">
+        <strong>Pizza Napoli</strong>
+        <p>תודה שבחרתם בנו | شكراً لاختياركم إلنا</p>
+      </footer>
+    </div>
   );
 }
 

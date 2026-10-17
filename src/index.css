@@ -3,9 +3,23 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffaf5;
-  color: #222;
+  background: #faf6ef;
+  color: #28211e;
+  font-family: Arial, "Noto Sans Arabic", sans-serif;
+}
+
+button, a {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
