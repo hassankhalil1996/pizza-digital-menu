@@ -278,6 +278,7 @@
 /* MOBILE */
 
 
+
 @media (max-width: 600px) {
   .app {
     padding: 0 12px;
@@ -373,20 +374,38 @@
     font-size: 18px;
   }
 
-  /* TOPPINGS */
+  /* COMPACT TOPPINGS */
 
   .toppings-section {
-    padding: 12px;
+    padding: 10px;
+    border-radius: 14px;
   }
 
   .toppings-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px 8px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px 5px;
   }
 
   .topping-card img {
-    width: 65px;
-    height: 65px;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+  }
+
+  .topping-card h3 {
+    font-size: 11px;
+    margin: 5px 0 2px;
+  }
+
+  .topping-card p {
+    font-size: 10px;
+    margin: 0 0 5px;
+  }
+
+  .topping-card .price-label {
+    font-size: 10px;
+    padding: 4px 6px;
   }
 
   /* DRINKS */
@@ -407,3 +426,4 @@
     justify-self: center;
   }
 }
+
