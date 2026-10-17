@@ -44,8 +44,8 @@ export const pizzas: Pizza[] = [
       ar: "بيتزا بأطراف محشية",
     },
     description: {
-      he: "פיצה עם שוליים ממולאים בגבינה נמסה.",
-      ar: "بيتزا بأطراف محشية بالجبنة الذائبة.",
+      he: "פיצה עם שוליים ממולאים בגבינה .",
+      ar: "بيتزا بأطراف محشية بالجبنة .",
     },
     image: "/images/stuffed.jpg",
     prices: { small: 40, family: 80, giant: 120 },
@@ -53,8 +53,8 @@ export const pizzas: Pizza[] = [
   {
     id: "fish",
     name: {
-      he: "פיצה הדג",
-      ar: "بيتزا السمك",
+      he: "פיצת הדג",
+      ar: "بيتزا السمكة",
     },
     description: {
       he: "פיצה מיוחדת בסגנון הבית .",
