@@ -3,6 +3,35 @@
    GENERAL
 ======================================== */
 
+:root {
+  color-scheme: dark;
+  --bg: #302923;
+  --surface: #40362f;
+  --surface-light: #4d4137;
+  --border: #655346;
+  --text: #f8f1e7;
+  --muted: #c4b9ac;
+  --red: #c62828;
+  --red-bright: #e53935;
+  --gold: #e5b65b;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
 .app {
   max-width: 1200px;
   margin: auto;
@@ -20,7 +49,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 15px 0;
+  padding: 24px 0 18px;
   text-align: center;
 }
 
@@ -28,29 +57,41 @@
   display: block;
   width: 150px;
   height: 150px;
-
   object-fit: contain;
 
   background: #fff8ee;
-  border: 3px solid #d9a441;
+  border: 3px solid var(--gold);
   border-radius: 50%;
 
   padding: 10px;
   box-sizing: border-box;
 
   box-shadow:
-    0 5px 18px rgba(0, 0, 0, 0.12),
-    0 0 0 5px rgba(217, 164, 65, 0.1);
+    0 6px 25px rgba(0, 0, 0, 0.45),
+    0 0 0 5px rgba(229, 182, 91, 0.12);
 
-  transition: transform 0.3s ease,
-              box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .restaurant-logo:hover {
   transform: scale(1.05);
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.18),
-    0 0 0 7px rgba(217, 164, 65, 0.15);
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 7px rgba(229, 182, 91, 0.2);
+}
+
+.header p {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 800;
+  color: var(--gold);
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin: 10px 0;
+  padding: 8px 16px;
+  border-bottom: 3px solid var(--red);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================================
@@ -61,30 +102,45 @@
   position: sticky;
   top: 0;
   z-index: 10;
+
   display: flex;
   gap: 12px;
   padding: 12px 0;
-  background: #faf6ef;
+
+  background: var(--bg);
 }
 
 .navbar a {
   flex: 1;
   text-align: center;
   text-decoration: none;
-  background: white;
-  color: #b71920;
-  border: 1px solid #e4d4c8;
+
+  background: var(--surface);
+  color: var(--gold);
+
+  border: 1px solid #685039;
   border-radius: 30px;
+
   padding: 14px 10px;
   font-weight: bold;
-  transition: all 0.25s ease;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar a:hover {
+  background: #38302b;
+  border-color: var(--gold);
 }
 
 .navbar a.active {
-  background: #b71920;
+  background: var(--red);
   color: white;
-  border-color: #b71920;
-  box-shadow: 0 4px 12px #b7192033;
+  border-color: var(--red-bright);
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.25);
 }
 
 /* ========================================
@@ -97,8 +153,8 @@
 }
 
 .section h2 {
-  color: #a70e18;
-  border-bottom: 2px solid #b71920;
+  color: var(--gold);
+  border-bottom: 2px solid var(--red);
   padding-bottom: 10px;
   font-size: clamp(21px, 3vw, 27px);
 }
@@ -118,23 +174,22 @@
   align-items: center;
   gap: 20px;
   padding: 12px;
-  background: white;
-  border: 1px solid #e9ddd0;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 3px 12px #0000000a;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   min-width: 0;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.header p {
-  font-size: clamp(20px, 3vw, 30px);
-  font-weight: 800;
-  color: #b71920;
-  text-align: center;
-  letter-spacing: 0.5px;
-  margin: 10px 0;
-  padding: 8px 16px;
-  border-bottom: 3px solid #d9a441;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.08);
+.pizza-card:hover {
+  border-color: #8b673b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* Image and description together */
@@ -164,15 +219,17 @@
 .pizza-info h3 {
   margin: 0 0 4px;
   font-size: 20px;
+  color: var(--text);
 }
 
 .pizza-info h4 {
   margin: 0 0 9px;
   font-size: 17px;
+  color: var(--gold);
 }
 
 .pizza-info p {
-  color: #666;
+  color: var(--muted);
   line-height: 1.5;
   margin: 4px 0;
   font-size: 14px;
@@ -196,20 +253,23 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
+
   min-width: 0;
   padding: 10px 4px;
-  background: #fff2e6;
-  border: 1px solid #e9c9b0;
+
+  background: #383029;
+  border: 1px solid #80613e;
   border-radius: 10px;
   text-align: center;
 }
 
 .size-box span {
   font-size: 12px;
+  color: var(--text);
 }
 
 .size-box strong {
-  color: #b71920;
+  color: var(--gold);
   font-size: 20px;
   white-space: nowrap;
 }
@@ -219,8 +279,9 @@
 ======================================== */
 
 .toppings-section {
-  background: white;
+  background: var(--surface);
   padding: 18px;
+  border: 1px solid var(--border);
   border-radius: 18px;
 }
 
@@ -242,38 +303,41 @@
   margin: auto;
   border-radius: 50%;
   object-fit: cover;
-  background: #f4eee6;
+  background: #39342e;
 }
 
 .topping-card h3,
 .drink-card h3 {
   margin: 9px 0 3px;
   font-size: 14px;
+  color: var(--text);
 }
 
 .topping-card p,
 .drink-card p {
   margin: 0 0 8px;
   font-size: 13px;
+  color: var(--muted);
 }
 
 .price-label {
   display: inline-block;
   padding: 6px 10px;
-  background: #f1e8df;
+  background: #40372e;
+  color: var(--text);
   border-radius: 20px;
   font-size: 12px;
 }
 
 .price-label.free {
-  background: #e4f5e8;
-  color: #187a35;
+  background: #193d29;
+  color: #8ee2a4;
   font-weight: bold;
 }
 
 .price-label.paid {
-  background: #fde8e8;
-  color: #b71920;
+  background: #4b2424;
+  color: #ffaaa5;
   font-weight: bold;
 }
 
@@ -288,12 +352,23 @@
 }
 
 .drink-card {
-  background: white;
-  border: 1px solid #e9ddd0;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   text-align: center;
   padding: 12px;
   min-width: 0;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.drink-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
 }
 
 .drink-card img {
@@ -305,7 +380,7 @@
 
 .drink-card strong {
   display: block;
-  background: #b71920;
+  background: var(--red);
   color: white;
   border-radius: 20px;
   padding: 8px;
@@ -317,8 +392,9 @@
 
 .footer {
   text-align: center;
-  border-top: 2px solid #b71920;
+  border-top: 2px solid var(--red);
   padding: 25px 0 35px;
+  color: var(--muted);
 }
 
 /* ========================================
@@ -366,12 +442,17 @@
   /* HEADER */
 
   .header {
-    padding: 8px 0 4px;
+    padding: 12px 0 8px;
   }
 
   .restaurant-logo {
     width: 125px;
     height: 125px;
+  }
+
+  .header p {
+    font-size: 19px;
+    padding: 6px 10px;
   }
 
   /* NAVIGATION */
