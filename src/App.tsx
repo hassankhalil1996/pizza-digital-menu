@@ -14,7 +14,7 @@ function App() {
       <Navbar />
 
       <main>
-        <Toppings />
+        
 
         <section id="pizza" className="section">
           <h2>הפיצות שלנו | البيتزا عنا</h2>
@@ -26,6 +26,8 @@ function App() {
           </div>
         </section>
 
+        <Toppings />
+        
         <Drinks />
       </main>
 
