@@ -313,6 +313,8 @@
 
   /* COMPACT PIZZA CARDS */
 
+  /* PIZZA - MOBILE */
+
   .pizza-list {
     gap: 12px;
   }
@@ -358,28 +360,29 @@
     margin: 3px 0;
   }
 
-  /* PIZZA PRICES */
-
   .pizza-prices {
     grid-area: prices;
     grid-column: auto;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    gap: 8px;
   }
 
   .size-box {
-    padding: 7px 3px;
+    min-width: 0;
+    padding: 8px 3px;
     gap: 3px;
     border-radius: 8px;
   }
 
   .size-box span {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .size-box strong {
-    font-size: 18px;
+    font-size: 20px;
+    white-space: nowrap;
   }
 
   /* COMPACT TOPPINGS */
